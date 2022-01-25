@@ -7,6 +7,8 @@
     height: 85vh
     background-size: cover
     background-position: center
+    @include mobile
+        height: 100vh
     nav
         @include mobile
             display: none
@@ -55,7 +57,7 @@
 
         @include mobile
             text-align: center
-
+            padding: 2rem
         h2
             font-size: 3rem
             @extend %title-text-shadow
@@ -88,7 +90,7 @@
             border: 1px solid #CCC
             transition: .3s
 
-             @include mobile
+            @include mobile
                 flex-basis: 100%
                 margin-bottom: 2rem
             
@@ -198,6 +200,9 @@ footer
         margin: 0 auto
         display: flex
         flex-wrap: wrap
+        @include mobile
+            max-width: 100%
+            flex-direction: column
 
         .footer-title
             color: #fff
@@ -205,14 +210,29 @@ footer
             margin-bottom: 1rem
     .footer-desc-container, .footer-links-container
         width: 50%
+
+        @include mobile
+            width: 100%
+            margin-bottom: 2rem
+            text-align: center
+            
     .footer-desc-container
         p
             width: 80%
             line-height: 1.3
+
+            @include mobile
+                width: 100%
     .footer-links-container
         display: flex
+
+
+        @include mobile
+            flex-direction: column
         &-list
             padding: 0 1rem
+            @include mobile
+                margin-bottom: 2rem
             li
                 margin-bottom: .5rem
                 a
@@ -225,5 +245,8 @@ footer
     .footer-copy-right-container
         width: 100%
         margin-top: 3rem
+        @include mobile
+            text-align: center
         p
             margin-bottom: 1rem
+

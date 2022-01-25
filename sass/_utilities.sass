@@ -18,8 +18,8 @@
 
 //MOBILE
 @mixin mobile
-    @media (max-width: 425px)
-        @content
+  @media (max-width: 425px)
+    @content
 
 @mixin card-mobile
     width: 100%
@@ -43,9 +43,13 @@
 %card-hover
     .job-card-title, .job-card-cover
         opacity: 0
+        
+        @include mobile
+        opacity: 1
     &:hover
         .job-card-title, .job-card-cover, .job-card-description
             opacity: 1
+
 // BTNS
 .btn
     padding: .6rem 1rem
